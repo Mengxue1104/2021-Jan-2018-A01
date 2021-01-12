@@ -36,10 +36,7 @@ namespace ChinookSystem.Entities
 
         public int Milliseconds { get; set; }
         public int? Bytes { get; set; }
-
-        [RegularExpression(@"^\d{1, 8}\.\d{1,2}$", 
-                ErrorMessage = "Unit price is limited to a precision of 10 and a scale of 2.")]
-        public Decimal UnitPrice { get; set; }
+        public decimal UnitPrice { get; set; }
 
         public virtual MediaType MediaType { get; set; }
         public virtual Album Album { get; set; }
