@@ -11,24 +11,21 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ChinookSystem.Entities
 {
-    [Table("Artists")]
-    internal class Artist
+    [Table("MediaTypes")]
+    internal class MediaType
     {
         private string _Name;
 
         [Key]
-        public int ArtistId { get; set; }
+        public int MediaTypeId { get; set; }
 
-        //[Required(ErrorMessage = "Artist name is required.")]
-        [StringLength(120, ErrorMessage = "Artist name is limited to 120 characters.")]
+        [StringLength(120, ErrorMessage = "Media type name is limited to 50 characters.")]
         public string Name
-        { 
+        {
             get { return _Name; }
             set { _Name = string.IsNullOrEmpty(value) ? null : value; }
         }
 
-        //navigational properites
-        //1 to many relationship; create the many relationship in this entity
-        public virtual ICollection<Album> Albums { get; set; }
+        public virtual ICollection<Track> Tracks { get; set; }
     }
 }
