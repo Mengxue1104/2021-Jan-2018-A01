@@ -25,6 +25,7 @@ namespace ChinookSystem.BLL
             using (var context = new ChinookSystemContext())
             {
                 //Linq to Entity
+
                 IEnumerable<ArtistAlbums> results = from x in context.Albums
                                                     select new ArtistAlbums
                                                     {
