@@ -28,7 +28,8 @@ namespace ChinookSystem.Entities
         }
 
         //navigational properites
-        //1 to many relationship; create the many relationship in this entity
+        //1 to many relationship; 
+        //create the many relationship in this entity
         public virtual ICollection<Album> Albums { get; set; }
     }
 }
