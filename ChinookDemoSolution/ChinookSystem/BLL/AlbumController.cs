@@ -38,19 +38,20 @@ namespace ChinookSystem.BLL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public List<ArtistAlbums> Albums_GetAlbumsForArtist(int ArtistId)
+        public List<ArtistAlbums> Albums_GetAlbumsForArtist(int artistid)
         {
             using (var context = new ChinookSystemContext())
             {
                 //Linq to Entity
 
                 IEnumerable<ArtistAlbums> results = from x in context.Albums
-                                                    where x.ArtistId == ArtistId
+                                                    where x.ArtistId == artistid
                                                     select new ArtistAlbums
                                                     {
                                                         Title = x.Title,
                                                         ReleaseYear = x.ReleaseYear,
-                                                        ArtistName = x.Artist.Name
+                                                        ArtistName = x.Artist.Name,
+                                                        ArtistId = x.ArtistId
                                                     };
                 return results.ToList();
             }

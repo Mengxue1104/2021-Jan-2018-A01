@@ -17,7 +17,7 @@ namespace ChinookSystem.BLL
     public class ArtistController
     {
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public List<SelectionList> Artists_GetforDDLList()
+        public List<SelectionList> Artists_DDLList()
         {
             using (var context = new ChinookSystemContext())
             {
